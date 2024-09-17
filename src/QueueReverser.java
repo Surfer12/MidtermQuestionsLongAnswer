@@ -4,13 +4,14 @@ import java.util.Queue;
 import java.util.Stack;
 import java.util.LinkedList;
 
+/**
+ * The QueueReverser class provides a static method to reverse the order of
+ * elements in a Queue.
+ * It utilizes a Stack to achieve the reversal.
+ */
 public class QueueReverser {
 
     public static void reverseQueue(Queue<Integer> queue, Stack<Integer> stack) {
-        Queue<Integer> initalQueue = queue; // grab the queue from the parameter
-        Stack<Integer> initalStack = stack; // grab the stack from the parameter
-
-        // enqueue all the elements from the queue to the stack
         pushToStack(queue, stack); // Pass the queue directly
 
         // pop all the elements from the stack to the queue to reverse the order
@@ -19,7 +20,7 @@ public class QueueReverser {
 
     public static void pushToStack(Queue<Integer> queue, Stack<Integer> stack) { // Add type for parameters
         while (queueIsNotEmpty(queue)) {
-            stack.push(queue.remove()); // Remove using queue and push to stack 
+            stack.push(queue.remove()); // Remove using queue and push to stack
         }
     }
 
