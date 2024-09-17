@@ -13,24 +13,24 @@ public class DequeQueImplimentation {
     private Deque<Integer> stack;
 
     public DequeQueImplimentation(Queue<Integer> queue, Deque<Integer> stack) {
-        this.queue = queue;
-        this.stack = stack;
+        this.queue = queue; // initialize the queue
+        this.stack = stack; // initialize the stack
     }
 
     public static void reverseQueue(Queue<Integer> queue, Deque<Integer> stack) {
         // Push all elements from the queue to the stack
-        pushToStack(queue, stack);
+        pushToStack(queue, stack); // call the pushToStack method
         // Pop all elements from the stack back to the queue
-        popFromStackToQueue(queue, stack);
+        popFromStackToQueue(queue, stack); // call the popFromStackToQueue method
     }
-    
+
     public static void pushToStack(Queue<Integer> queue, Deque<Integer> stack) {
         // Transfer all elements from the queue to the stack
         while (!queue.isEmpty()) {
             stack.push(queue.remove());
         }
     }
-    
+
     public static void popFromStackToQueue(Queue<Integer> queue, Deque<Integer> stack) {
         // Transfer all elements from the stack back to the queue
         while (!stack.isEmpty()) {
@@ -52,5 +52,5 @@ public class DequeQueImplimentation {
         Deque<Integer> stack = new ArrayDeque<>();
         reverseQueue(queue, stack);
         printQueue(queue);
-}
+    }
 }
