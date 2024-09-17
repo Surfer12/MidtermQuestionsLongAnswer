@@ -17,21 +17,32 @@ public class CalculateFrequency {
         String word = scanner.nextLine().toLowerCase();
         scanner.close();
 
-        Map<Character, Integer> frequencyMap = new HashMap<>(); // create a hash map to store the frequency of each
-                                                                // character
+
+/*
+ * Create a HashMap to store the frequency of each character.
+ * Use getOrDefault to retrieve the current count of character c,
+ * defaulting to 0 if it doesn't exist, then increment the count by 1.
+ * Store the character and its frequency in the frequency map.
+ */
+
+        Map<Character, Integer> frequencyMap = new HashMap<>(); 
 
         for (char c : word.toCharArray()) { // creates a char array of the word
             if (Character.isLetter(c)) { // if it's a letter
-                frequencyMap.put(c, frequencyMap.getOrDefault(c, 0) + 1); // retrieves the current value of element c
-                // if it's not there, it's 0, then adds 1 to the value to increment the count
-                // put the character and the frequency into the frequency map
+                frequencyMap.put(c, frequencyMap.getOrDefault(c, 0) + 1); 
             }
         }
 
-        // Display the frequency of each letter
+        /*
+         * loop through the set view of the
+         * mappings contained in the frequency
+         * map, for each entry in the frequency grab the key and value
+         * Display the frequency of each letter
+         * print the key and value of the frequency
+         * map
+         */
         for (Map.Entry<Character, Integer> entry : frequencyMap.entrySet()) {
-            System.out.println(entry.getKey() + ": " + entry.getValue()); // print the key and value of the frequency
-                                                                          // map
+            System.out.println(entry.getKey() + ": " + entry.getValue());
         }
     }
 }

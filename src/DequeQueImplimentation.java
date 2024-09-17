@@ -9,14 +9,6 @@ import java.util.LinkedList;
  */
 public class DequeQueImplimentation {
 
-    private Queue<Integer> queue;
-    private Deque<Integer> stack;
-
-    public DequeQueImplimentation(Queue<Integer> queue, Deque<Integer> stack) {
-        this.queue = queue; // initialize the queue
-        this.stack = stack; // initialize the stack
-    }
-
     public static void reverseQueue(Queue<Integer> queue, Deque<Integer> stack) {
         // Push all elements from the queue to the stack
         pushToStack(queue, stack); // call the pushToStack method

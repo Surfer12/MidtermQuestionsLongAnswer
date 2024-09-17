@@ -15,16 +15,17 @@ public class Factorial {
     public void setNumber(int number) {
         this.number = number;
     }
-    
-    public int calculateFactorial(int factorial) {
-        for (int i = 1; i <= number; i++) {
-            factorial *= i;
+
+    public int calculateFactorial() {
+        int result = 1; // Initialize initial value to 1
+        for (int i = 1; i <= number; i++) { // loop from 1 to the number
+            result *= i; // Multiply result by i to calculate the factorial. 
         }
-        return factorial;
+        return result; // Return the factorial
     }
 
     public static void main(String[] args) {
         Factorial factorial = new Factorial(5);
-        System.out.println("Factorial of " + factorial.getNumber() + " is " + factorial.calculateFactorial(1));
+        System.out.println(factorial.calculateFactorial());
     }
 }
